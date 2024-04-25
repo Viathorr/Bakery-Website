@@ -34,3 +34,18 @@ rightArrow.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % images.length;
   sliderImage.src = images[currentIndex];
 });
+
+
+// Feedback window
+
+const feedbackSection = document.querySelector('.feedback');
+const openBtn = document.getElementById('feedback-link');
+const closeBtn = document.getElementById('close-btn');
+
+openBtn.addEventListener('click', () => {
+  feedbackSection.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  feedbackSection.classList.remove('active');
+});

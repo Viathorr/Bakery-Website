@@ -58,6 +58,7 @@
       </div>
     </section>
     <main class="content">
+      <div class="navbar"></div>
       <div class="leftblock"></div>
       <div class="centerblock"></div>
     </main>
@@ -83,7 +84,39 @@
         <p><u>Website development</u> —<br />student Nuradinova A.</p>
       </div>
     </footer>
-    <section class="feedback"></section>
+    <section class="feedback">
+      <div class="form-content">
+        <div class="close-btn" id="close-btn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h2>Feedback</h2>
+        <form class="form">
+          <label for="name">Your Name <span class="red">*</span></label>
+          <input class="form-input name" type="text" id="name" required />
+          <label for="phone-number"
+            >Phone Number <span class="red">*</span></label
+          >
+          <input
+            class="form-input phone-number"
+            type="tel"
+            id="phone-number"
+            required
+          />
+          <label for="email">Email <span class="red">*</span></label>
+          <input class="form-input email" type="email" id="email" required />
+          <label for="report">Report</label>
+          <textarea
+            class="form-textarea"
+            name="report"
+            id="report"
+            cols="40"
+            rows="5"
+            re
+          ></textarea>
+          <button class="submit-btn">SEND</button>
+        </form>
+      </div>
+    </section>
     <script
       src="https://kit.fontawesome.com/30e5385ed1.js"
       crossorigin="anonymous"
