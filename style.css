@@ -38,6 +38,7 @@ body {
   min-width: 980px;
   padding: 10px;
   display: flex;
+  min-height: 10rem;
 }
 
 .header {
@@ -152,6 +153,7 @@ body {
   background-color: var(--primary-bg-color);
   overflow: hidden;
   padding: 1rem 0;
+  position: relative;
 }
 
 .slider .arrow {
@@ -165,9 +167,14 @@ body {
 
 .slider .bakery-image {
   border-radius: 1rem;
-  width: 900px;
+  width: 650px;
   max-height: 100%;
   object-position: center;
+  transition: opacity 0.5s;
+}
+
+.slider .fade-out {
+  opacity: 0;
 }
 
 /* Main section(content) */
