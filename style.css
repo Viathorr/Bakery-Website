@@ -15,6 +15,7 @@
   --primary-dark-color: #825f43;
   --primary-bg-color: #e4d5b7;
   --primary-hover-light-color: #fbf4f3;
+  --primary-dark-text-color: #654933;
 }
 
 body {
@@ -29,7 +30,6 @@ body {
   padding: 0;
   line-height: 22px;
   font-family: "PT Sans", sans-serif;
-  list-style: none;
 }
 
 /* Header */
@@ -115,6 +115,7 @@ body {
 }
 
 .nav-menu ul {
+  list-style: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,6 +179,146 @@ body {
 }
 
 /* Main section(content) */
+.content {
+  background-color: var(--primary-hover-light-color);
+}
+
+/* navbar */
+.navbar {
+  padding-left: 8rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.3rem;
+}
+
+.navbar a,
+.navbar li {
+  text-decoration: none;
+  color: var(--primary-dark-text-color);
+}
+
+/* main-content */
+.main-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* leftblock */
+
+.main-content .leftblock .first-list > li {
+  margin-bottom: 0.5rem;
+}
+
+.main-content .leftblock a {
+  text-decoration: none;
+  color: var(--primary-dark-text-color);
+}
+
+.main-content .leftblock .first-list {
+  list-style: none;
+  font-size: 1.1rem;
+}
+
+.main-content .leftblock .inner-list {
+  margin-left: 2rem;
+  list-style: circle ;
+  font-size: 0.9rem;
+}
+
+/* centerblock */
+.main-content .centerblock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-content .centerblock .catalog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1rem;
+  column-gap: 1rem;
+}
+
+.main-content .centerblock .catalog .product-card {
+  /* width: 300px; */
+  /* height: 400px; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--primary-light-color);
+}
+
+.main-content .centerblock .catalog .product-card img {
+  width: 300px;
+  height: 300px;
+}
+
+.main-content .centerblock .catalog .product-card .cake-title {
+  margin-top: 1.25rem;
+  margin-bottom: 1.75rem;
+  cursor: pointer;
+  color: var(--primary-dark-text-color);
+}
+
+.main-content .centerblock .catalog .product-card .cake-price {
+  margin-bottom: 1rem;
+  color: var(--primary-dark-text-color);
+}
+
+.main-content .centerblock .catalog .product-card .pounds {
+  font-size: 2.2rem;
+}
+
+/* pagination */
+.main-content .centerblock .pagination {
+  margin-bottom: 2rem;
+}
+
+.main-content .centerblock .pagination .pagination-list {
+  margin: 2rem auto;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}  
+
+.main-content .centerblock .pagination .pagination-list li {
+  cursor: pointer;
+  font-size: 0.95rem;
+}  
+
+.main-content .centerblock .pagination .pagination-list li.chosen {
+  font-weight: 600;
+  font-size: 1.3rem;
+}  
+
+/* bakery story */
+.main-content .centerblock .bakery-story {
+  width: 1030px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-top: 2px solid var(--primary-dark-color);
+  padding-top: 1.5rem;
+  margin-bottom: 5rem;
+} 
+
+.main-content .centerblock .bakery-story div:first-of-type,
+.main-content .centerblock .bakery-story div:last-of-type {
+  width: 49%;
+}
 
 /* Footer */
 .footer {
@@ -187,6 +328,10 @@ body {
   justify-content: space-around;
   align-items: flex-start;
   padding: 2rem 10px;
+}
+
+.footer ul {
+  list-style: none;
 }
 
 .footer .menu-bar li {
@@ -285,7 +430,16 @@ body {
   border: 1px solid #b0b0b0;
   border-radius: 0.25rem;
   outline: none;
-  padding: 0.25rem;
+  padding: 0.4rem;
+  transition: 0.125s ease-in-out;
+}
+
+.feedback .form-content .form .form-input::placeholder {
+  color: #ff0000b6;
+}
+
+.feedback .form-content .form .form-input.styled-input {
+  box-shadow: inset -1px -1px 6px 1px #ff0000c4;
 }
 
 .feedback .form-content .form .form-textarea {
@@ -304,4 +458,6 @@ body {
   color: #fff;
   font-weight: 600;
   font-size: 1.25rem;
+  cursor: pointer;
 }
+

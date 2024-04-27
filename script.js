@@ -1,3 +1,5 @@
+// Slider
+
 const images = [
   'https://readingterminalmarket.org/wp-content/uploads/2022/06/philadelphia-market-bakery.jpg',
   'https://blog.revelsystems.com/hubfs/AdobeStock_111414411.jpeg',
@@ -36,7 +38,7 @@ rightArrow.addEventListener('click', () => {
 });
 
 
-// Feedback window
+// Feedback window appearance
 
 const feedbackSection = document.querySelector('.feedback');
 const openBtn = document.getElementById('feedback-link');
@@ -48,4 +50,65 @@ openBtn.addEventListener('click', () => {
 
 closeBtn.addEventListener('click', () => {
   feedbackSection.classList.remove('active');
+});
+
+// Feedback form submission
+
+const form = document.querySelector('.form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const nameInput = document.getElementById("name");
+  const phoneInput = document.getElementById("phone-number");
+  const emailInput = document.getElementById("email");
+
+  if (!nameInput.value.trim() || !phoneInput.value.trim() || !emailInput.value.trim()) {
+    if (!nameInput.value.trim()) {
+      nameInput.classList.add('styled-input');
+      nameInput.placeholder = 'Name is required';
+    } else {
+      nameInput.classList.remove('styled-input');
+      nameInput.placeholder = '';
+    }
+    if (!phoneInput.value.trim()) {
+      phoneInput.classList.add('styled-input');
+      phoneInput.placeholder = 'Phone is required';
+    } else {
+      phoneInput.classList.remove('styled-input');
+      phoneInput.placeholder = '';
+    }
+    if (!emailInput.value.trim()) {
+      emailInput.classList.add('styled-input');
+      emailInput.placeholder = 'Email is required';
+    } else {
+      emailInput.classList.remove('styled-input');
+      emailInput.placeholder = '';
+    }
+  } else {
+    feedbackSection.classList.remove('active');
+    nameInput.classList.remove('styled-input');
+    nameInput.value = '';
+    nameInput.placeholder = '';
+    phoneInput.classList.remove('styled-input');
+    phoneInput.value = '';
+    phoneInput.placeholder = '';
+    emailInput.classList.remove('styled-input');
+    emailInput.value = '';
+    emailInput.placeholder = '';
+
+  }
+});
+
+// Pagination
+const paginationItems = document.querySelectorAll('.pagination-list li');
+
+paginationItems.forEach(item => {
+  item.addEventListener('click', () => {
+    paginationItems.forEach(item => {
+      item.classList.remove('chosen');
+    });
+
+    item.classList.add('chosen');
+  });
 });
