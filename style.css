@@ -227,6 +227,7 @@ body {
 
 .main-content .leftblock .first-list > li {
   margin-bottom: 0.5rem;
+  margin-left: 2rem;
 }
 
 .main-content .leftblock a {
@@ -576,6 +577,7 @@ body {
 
   .main-content .centerblock .catalog {
     grid-template-columns: repeat(2, 1fr);
+    margin-right: 2rem;
   }
 
   .main-content .centerblock .bakery-story {
@@ -586,8 +588,13 @@ body {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 300px) {
   .main-content .centerblock .catalog {
     grid-template-columns: repeat(1, 1fr);
+    margin-right: 3rem;
+  }
+
+  .main-content .leftblock {
+    margin-left: 6rem;
   }
 }
